@@ -8,8 +8,10 @@ class Polygon:
         self.stocks_ticker = input("What stock would you like to see?\nExample:'TSLA'\n").upper()
         api_key = "CakcO4loX4fU6bL78tHmrzOtop5dL_ZB"
 
+        # Current day price
         current_day_info = f"https://api.polygon.io/v1/open-close/{self.stocks_ticker}/{self.day_of_week(dt.date.today())}?apiKey={api_key}"
 
+        # Yesterday price
         previous_day_info = f"https://api.polygon.io/v1/open-close/{self.stocks_ticker}/{self.day_of_week(self.yesterday())}?apiKey={api_key}"
 
         self.response_current = requests.get(current_day_info)

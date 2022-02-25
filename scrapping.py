@@ -11,6 +11,7 @@ class Scrapper:
         self.driver.find_element(By.XPATH, '//*[@id="query"]').send_keys(name_of_stock)
         self.driver.find_element(By.ID, "querySearchButton").click()
 
+    # Grabbing relevant news of stock
     def news(self):
         for i in self.driver.find_elements(By.CLASS_NAME, "LatestNews-headline")[:5]:
             print(i.text)
